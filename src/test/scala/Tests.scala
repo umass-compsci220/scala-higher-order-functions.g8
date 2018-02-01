@@ -48,11 +48,13 @@ class TestSuite extends org.scalatest.FunSuite {
   def lt(x: Int, y: Int): Boolean = x < y
 
   test("merge test 1") {
-    assert(merge(lt, List(5, 3, 1), List(10, 6, 0)) == List(10, 6, 5, 3, 1, 0))
+    assert(merge(lt, List(1,3,5), List(0,6,10)) ==
+          List(0,1,3,5,6,10))
   }
 
   test("sort test 1") {
-    assert(sort(lt, List(5,1,2,3,4,5)) == List(5,5,4,3,2,1))
+    assert(sort(lt, List(5,1,2,3,4,5)) ==
+          List(1,2,3,4,5,5))
   }
 
 }
